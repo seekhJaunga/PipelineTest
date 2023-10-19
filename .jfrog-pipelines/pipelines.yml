@@ -1,5 +1,5 @@
 pipelines:
-  - name: single_test
+  - name: single_test1
     steps:
       - name: trigger_1
         type: Bash
