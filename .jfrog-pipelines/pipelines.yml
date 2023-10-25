@@ -1,9 +1,9 @@
 resources:
-  - name: resource_1
+  - name: resource_2
     type: GitRepo
     configuration:
       gitProvider: test
-      path:  seekhJaunga/ Ekart  
+      path:  seekhJaunga/Ekart  
       buildOn:
          releaseCreate: true
          commit: false
@@ -21,10 +21,10 @@ pipelines:
           affinityGroup: trigger
           timeoutSeconds: 5
           inputResources:
-            - name: resource_1
+            - name: resource_2
         execution:
           onExecute:
-            - echo $res_resource_1_path
+            - echo $res_resource_2_path
       # - name: trigger_2
       #   type: Bash
       #   execution:
