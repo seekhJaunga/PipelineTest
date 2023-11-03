@@ -2,7 +2,7 @@ resources:
   - name: resource_new_2
     type: GitRepo
     configuration:
-      gitProvider: testingGith
+      gitProvider: emptyRepotest
       path:  seekhJaunga/emptyrepo
       buildOn:
          releaseCreate: true
