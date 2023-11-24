@@ -16,12 +16,12 @@ pipelines:
           env2: "test_p2"
     steps:
       - name: pre_step
-          type: Bash
-          configuration:
-            affinityGroup: trigger
-            timeoutSeconds: 5
-            # inputResources:
-            #   - name: resource_new_2
+        type: Bash
+        configuration:
+          affinityGroup: trigger
+          timeoutSeconds: 5
+          # inputResources:
+          #   - name: resource_new_2
       - name: trigger_1
         type: Bash
         configuration:
