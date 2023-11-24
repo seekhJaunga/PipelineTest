@@ -1,12 +1,12 @@
-resources:
-  - name: resource_new_2
-    type: GitRepo
-    configuration:
-      gitProvider: emptyRepotest
-      path:  seekhJaunga/emptyrepo
-      buildOn:
-         releaseCreate: true
-         commit: false
+# resources:
+#   - name: resource_new_2
+#     type: GitRepo
+#     configuration:
+#       gitProvider: emptyRepotest
+#       path:  seekhJaunga/emptyrepo
+#       buildOn:
+#          releaseCreate: true
+#          commit: false
 
 pipelines:
   - name: single_test
@@ -16,6 +16,102 @@ pipelines:
           env2: "test_p2"
     steps:
       - name: trigger_1
+        type: Bash
+        configuration:
+          affinityGroup: trigger
+          timeoutSeconds: 5
+          # inputResources:
+          #   - name: resource_new_2
+        execution:
+          onExecute:
+            - echo $resource_new_2_path
+      - name: trigger_2
+        type: Bash
+        configuration:
+          affinityGroup: trigger
+          timeoutSeconds: 5
+          # inputResources:
+          #   - name: resource_new_2
+        execution:
+          onExecute:
+            - echo $resource_new_2_path
+      - name: trigger_3
+        type: Bash
+        configuration:
+          affinityGroup: trigger
+          timeoutSeconds: 5
+          inputResources:
+            - name: resource_new_2
+        execution:
+          onExecute:
+            - echo $resource_new_2_path
+      - name: trigger_4
+        type: Bash
+        configuration:
+          affinityGroup: trigger
+          timeoutSeconds: 5
+          inputResources:
+            - name: resource_new_2
+        execution:
+          onExecute:
+            - echo $resource_new_2_path
+      - name: trigger_5
+        type: Bash
+        configuration:
+          affinityGroup: trigger
+          timeoutSeconds: 5
+          inputResources:
+            - name: resource_new_2
+        execution:
+          onExecute:
+            - echo $resource_new_2_path
+  - name: testing
+    configuration:
+      environmentVariables:
+        readOnly:
+          env2: "test_p2"
+    steps:
+      - name: trigger1
+        type: Bash
+        configuration:
+          affinityGroup: trigger
+          timeoutSeconds: 5
+          # inputResources:
+          #   - name: resource_new_2
+        execution:
+          onExecute:
+            - echo $resource_new_2_path
+      - name: trigger2
+        type: Bash
+        configuration:
+          affinityGroup: trigger
+          timeoutSeconds: 5
+          # inputResources:
+          #   - name: resource_new_2
+        execution:
+          onExecute:
+            - echo $resource_new_2_path
+      - name: trigger3
+        type: Bash
+        configuration:
+          affinityGroup: trigger
+          timeoutSeconds: 5
+          inputResources:
+            - name: resource_new_2
+        execution:
+          onExecute:
+            - echo $resource_new_2_path
+      - name: trigger4
+        type: Bash
+        configuration:
+          affinityGroup: trigger
+          timeoutSeconds: 5
+          inputResources:
+            - name: resource_new_2
+        execution:
+          onExecute:
+            - echo $resource_new_2_path
+      - name: trigger5
         type: Bash
         configuration:
           affinityGroup: trigger
