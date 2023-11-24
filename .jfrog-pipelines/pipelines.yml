@@ -27,7 +27,7 @@ pipelines:
         configuration:
           affinityGroup: trigger
           timeoutSeconds: 5
-          inputResources:
+          inputSteps:
             - name: pre_step
         execution:
           onExecute:
@@ -37,7 +37,7 @@ pipelines:
         configuration:
           affinityGroup: trigger
           timeoutSeconds: 5
-          inputResources:
+          inputSteps:
             - name: pre_step
         execution:
           onExecute:
@@ -47,7 +47,7 @@ pipelines:
         configuration:
           affinityGroup: trigger
           timeoutSeconds: 5
-          inputResources:
+          inputSteps:
             - name: pre_step
         execution:
           onExecute:
@@ -57,7 +57,7 @@ pipelines:
         configuration:
           affinityGroup: trigger
           timeoutSeconds: 5
-          inputResources:
+          inputSteps:
             - name: pre_step
         execution:
           onExecute:
@@ -67,7 +67,7 @@ pipelines:
         configuration:
           affinityGroup: trigger
           timeoutSeconds: 5
-          inputResources:
+          inputSteps:
             - name: pre_step
         execution:
           onExecute:
