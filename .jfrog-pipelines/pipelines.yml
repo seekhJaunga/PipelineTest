@@ -7,9 +7,8 @@
 #       buildOn:
 #          releaseCreate: true
 #          commit: false
-
 pipelines:
-  - name: single_test
+  - name: single_test_new
     configuration:
       environmentVariables:
         readOnly:
