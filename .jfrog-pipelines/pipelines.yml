@@ -1,12 +1,12 @@
-resources:
-  - name: resource_new_2
-    type: GitRepo
-    configuration:
-      gitProvider: emptyRepotest
-      path:  seekhJaunga/emptyrepo
-      buildOn:
-         releaseCreate: true
-         commit: false
+# resources:
+#   - name: resource_new_2
+#     type: GitRepo
+#     configuration:
+#       gitProvider: emptyRepotest
+#       path:  seekhJaunga/emptyrepo
+#       buildOn:
+#          releaseCreate: true
+#          commit: false
 pipelines:
   - name: single_test_new
     configuration:
