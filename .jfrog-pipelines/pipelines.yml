@@ -7,137 +7,194 @@
 #       buildOn:
 #          releaseCreate: true
 #          commit: false
-pipelines:
-  - name: single_test_new
-    configuration:
-      environmentVariables:
-        readOnly:
-          env2: "test_p2"
-          env1: pipe_value1
-          env5:
-            default: pipe_value2
-            description: This is env2 description
-            secure: true
-    steps:
-      - name: pre_step
-        type: Bash
-        configuration:
-          affinityGroup: trigger
-          timeoutSeconds: 5
-          # inputResources:
-          #   - name: resource_new_2
-        execution:
-          onExecute:
-            - echo hehe
-      - name: trigger_1
-        type: Bash
-        configuration:
-          affinityGroup: trigger
-          timeoutSeconds: 5
-          inputSteps:
-            - name: pre_step
-        execution:
-          onExecute:
-            - echo $resource_new_2_path
-      - name: trigger_2
-        type: Bash
-        configuration:
-          affinityGroup: trigger
-          timeoutSeconds: 5
-          inputSteps:
-            - name: pre_step
-        execution:
-          onExecute:
-            - echo $resource_new_2_path
-      - name: trigger_3
-        type: Bash
-        configuration:
-          affinityGroup: trigger
-          timeoutSeconds: 5
-          inputSteps:
-            - name: pre_step
-        execution:
-          onExecute:
-            - echo $resource_new_2_path
-      - name: trigger_4
-        type: Bash
-        configuration:
-          affinityGroup: trigger
-          timeoutSeconds: 5
-          inputSteps:
-            - name: pre_step
-        execution:
-          onExecute:
-            - echo $resource_new_2_path
-      - name: trigger_5
-        type: Bash
-        configuration:
-          affinityGroup: trigger
-          timeoutSeconds: 5
-          inputSteps:
-            - name: pre_step
-        execution:
-          onExecute:
-            - echo $resource_new_2_path
-  - name: testing
-    configuration:
-      environmentVariables:
-        readOnly:
-          env2: "test_p2"
-    steps:
-      - name: trigger1
-        type: Bash
-        configuration:
-          affinityGroup: trigger
-          timeoutSeconds: 5
-          # inputResources:
-          #   - name: resource_new_2
-        execution:
-          onExecute:
-            - echo $resource_new_2_path
-      - name: trigger2
-        type: Bash
-        configuration:
-          affinityGroup: trigger
-          timeoutSeconds: 5
-          inputSteps:
-            - name: trigger1
-        execution:
-          onExecute:
-            - echo $resource_new_2_path
-      - name: trigger3
-        type: Bash
-        configuration:
-          affinityGroup: trigger
-          timeoutSeconds: 5
-          inputSteps:
-            - name: trigger1
-        execution:
-          onExecute:
-            - echo $resource_new_2_path
-      - name: trigger4
-        type: Bash
-        configuration:
-          affinityGroup: trigger
-          timeoutSeconds: 5
-          inputSteps:
-            - name: trigger1
-        execution:
-          onExecute:
-            - echo $resource_new_2_path
-      - name: trigger5
-        type: Bash
-        configuration:
-          affinityGroup: trigger
-          timeoutSeconds: 5
-          inputSteps:
-            - name: trigger1
-        execution:
-          onExecute:
-            - echo $resource_new_2_path
+# pipelines:
+  # - name: single_test_new
+  #   configuration:
+  #     environmentVariables:
+  #       readOnly:
+  #         env2: "test_p2"
+  #         env1: pipe_value1
+  #         env5:
+  #           default: pipe_value2
+  #           description: This is env2 description
+  #           secure: true
+  #   steps:
+  #     - name: pre_step
+  #       type: Bash
+  #       configuration:
+  #         affinityGroup: trigger
+  #         timeoutSeconds: 5
+  #         # inputResources:
+  #         #   - name: resource_new_2
+  #       execution:
+  #         onExecute:
+  #           - echo hehe
+  #     - name: trigger_1
+  #       type: Bash
+  #       configuration:
+  #         affinityGroup: trigger
+  #         timeoutSeconds: 5
+  #         inputSteps:
+  #           - name: pre_step
+  #       execution:
+  #         onExecute:
+  #           - echo $resource_new_2_path
+  #     - name: trigger_2
+  #       type: Bash
+  #       configuration:
+  #         affinityGroup: trigger
+  #         timeoutSeconds: 5
+  #         inputSteps:
+  #           - name: pre_step
+  #       execution:
+  #         onExecute:
+  #           - echo $resource_new_2_path
+  #     - name: trigger_3
+  #       type: Bash
+  #       configuration:
+  #         affinityGroup: trigger
+  #         timeoutSeconds: 5
+  #         inputSteps:
+  #           - name: pre_step
+  #       execution:
+  #         onExecute:
+  #           - echo $resource_new_2_path
+  #     - name: trigger_4
+  #       type: Bash
+  #       configuration:
+  #         affinityGroup: trigger
+  #         timeoutSeconds: 5
+  #         inputSteps:
+  #           - name: pre_step
+  #       execution:
+  #         onExecute:
+  #           - echo $resource_new_2_path
+  #     - name: trigger_5
+  #       type: Bash
+  #       configuration:
+  #         affinityGroup: trigger
+  #         timeoutSeconds: 5
+  #         inputSteps:
+  #           - name: pre_step
+  #       execution:
+  #         onExecute:
+  #           - echo $resource_new_2_path
+  # - name: testing
+  #   configuration:
+  #     environmentVariables:
+  #       readOnly:
+  #         env2: "test_p2"
+  #   steps:
+  #     - name: trigger1
+  #       type: Bash
+  #       configuration:
+  #         affinityGroup: trigger
+  #         timeoutSeconds: 5
+  #         # inputResources:
+  #         #   - name: resource_new_2
+  #       execution:
+  #         onExecute:
+  #           - echo $resource_new_2_path
+  #     - name: trigger2
+  #       type: Bash
+  #       configuration:
+  #         affinityGroup: trigger
+  #         timeoutSeconds: 5
+  #         inputSteps:
+  #           - name: trigger1
+  #       execution:
+  #         onExecute:
+  #           - echo $resource_new_2_path
+  #     - name: trigger3
+  #       type: Bash
+  #       configuration:
+  #         affinityGroup: trigger
+  #         timeoutSeconds: 5
+  #         inputSteps:
+  #           - name: trigger1
+  #       execution:
+  #         onExecute:
+  #           - echo $resource_new_2_path
+  #     - name: trigger4
+  #       type: Bash
+  #       configuration:
+  #         affinityGroup: trigger
+  #         timeoutSeconds: 5
+  #         inputSteps:
+  #           - name: trigger1
+  #       execution:
+  #         onExecute:
+  #           - echo $resource_new_2_path
+  #     - name: trigger5
+  #       type: Bash
+  #       configuration:
+  #         affinityGroup: trigger
+  #         timeoutSeconds: 5
+  #         inputSteps:
+  #           - name: trigger1
+  #       execution:
+  #         onExecute:
+  #           - echo $resource_new_2_path
       # - name: trigger_2
       #   type: Bash
       #   execution:
       #     onExecute:
       #       - echo $env
       #       - echo $env2
+
+
+pipelines:
+  - name: S_Bash_3852_001
+    configuration:
+      environmentVariables:
+        readOnly:
+          pipevar1: 1
+          pipevar2: 2
+    steps:
+      - name: S_Bash_3852_001_1
+        type: Bash
+        configuration:
+          environmentVariables:
+            S_Bash_3852_001_1: "yes"
+          affinityGroup: 'group'
+        execution:
+          onExecute:
+            - if [ "$S_Bash_3852_001_1" != "yes" ]; then return 1; fi
+            - echo "done"
+      - name: S_Bash_3852_001_2
+        type: Bash
+        configuration:
+          environmentVariables:
+            S_Bash_3852_001_2: 'yes'
+          affinityGroup: 'group'
+          inputSteps:
+            - name: S_Bash_3852_001_1
+        execution:
+          onExecute:
+            - if [ "$S_Bash_3852_001_2" != "yes" ]; then return 1; fi
+            - echo "done"
+      - name: S_Bash_3852_001_3
+        type: Bash
+        configuration:
+          environmentVariables:
+            S_Bash_3852_001_3: 'yes'
+          affinityGroup: 'group'
+          inputSteps:
+            - name: S_Bash_3852_001_1
+        execution:
+          onExecute:
+            - if [ "$S_Bash_3852_001_3" != "yes" ]; then return 1; fi
+            - echo "done"
+      - name: S_Bash_3852_001_4
+        type: Bash
+        configuration:
+          environmentVariables:
+            S_Bash_3852_001_4: 'yes'
+          affinityGroup: 'group'
+          inputSteps:
+            - name: S_Bash_3852_001_2
+            - name: S_Bash_3852_001_3
+        execution:
+          onExecute:
+            - if [ "$S_Bash_3852_001_4" != "yes" ]; then return 1; fi
+            - echo "done"
