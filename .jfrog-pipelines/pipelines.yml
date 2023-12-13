@@ -135,12 +135,12 @@ pipelines:
         execution:
           onExecute:
             - echo $resource_new_2_path
-      - name: trigger_2
-        type: Bash
-        execution:
-          onExecute:
-            - echo $env
-            - echo $env2
+      # - name: trigger_2
+      #   type: Bash
+      #   execution:
+      #     onExecute:
+      #       - echo $env
+      #       - echo $env2
 
 
 # pipelines:
