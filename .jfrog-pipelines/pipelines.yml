@@ -207,16 +207,18 @@ resources:
       buildName: docker-local-build
       buildNumber: 359014
 
-name: xray_pipeline_default
-configuration:
-  jfrogCliVersion: 2
-steps:
-  - name: xray
-    type: XrayScan
+
+pipelines:
+  - name: xray_pipeline_default
     configuration:
-      inputResources:
-        - name: testScan1
-    execution:
-      onStart:
-        - jfrog --version
-        - echo "scan complete"
+    jfrogCliVersion: 2
+    steps:
+      - name: xray
+        type: XrayScan
+        configuration:
+          inputResources:
+            - name: testScan1
+        execution:
+          onStart:
+            - jfrog --version
+            - echo "scan complete"
