@@ -211,7 +211,7 @@ resources:
 pipelines:
   - name: xray_pipeline_default
     configuration:
-    jfrogCliVersion: 2
+      jfrogCliVersion: 2
     steps:
       - name: xray
         type: XrayScan
