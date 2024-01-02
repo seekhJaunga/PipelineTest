@@ -204,8 +204,8 @@ resources:
     type: BuildInfo
     configuration:
       sourceArtifactory: s_artifactory
-      buildName: docker-local-build
-      buildNumber: 359014
+      buildName: test_go_app_build_publish_main
+      buildNumber: 88
 
 
 pipelines:
