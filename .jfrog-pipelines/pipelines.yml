@@ -200,7 +200,7 @@
 #             - echo "done"
 
 resources:
-  - name: testScan1
+  - name: testScan2
     type: BuildInfo
     configuration:
       sourceArtifactory: s_artifactory
@@ -217,7 +217,7 @@ pipelines:
         type: XrayScan
         configuration:
           inputResources:
-            - name: testScan1
+            - name: testScan2
         execution:
           onStart:
             - jfrog --version
