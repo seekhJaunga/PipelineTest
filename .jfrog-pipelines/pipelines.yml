@@ -35,7 +35,6 @@ pipelines:
         configuration:
           inputResources:
             - name: gitRes1
-            - name: Image_1
             # - name: dbp_build_info
           outputResources:
             - name: prores1
