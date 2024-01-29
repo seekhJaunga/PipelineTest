@@ -4,6 +4,7 @@ resources:
     configuration:
       runNumber: 56
       x: 55
+      y: 65
   - name: gitRes1
     type: GitRepo
     configuration:
