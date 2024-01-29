@@ -2,9 +2,7 @@ resources:
   - name: prores1
     type: PropertyBag
     configuration:
-      runNumber: 56
-      x: 55
-      y: 65
+      runNumber: 57
   - name: gitRes1
     type: GitRepo
     configuration:
