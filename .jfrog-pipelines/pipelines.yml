@@ -42,4 +42,4 @@ pipelines:
             - printenv
             - echo $env
             - echo $env2
-            - write_output myResource runNumber=${run_number}
+            # - write_output myResource runNumber=${run_number}
