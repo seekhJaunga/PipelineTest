@@ -6,7 +6,7 @@ resources:
   - name: gitRes1
     type: GitRepo
     configuration:
-      gitProvider: testpunya
+      gitProvider: test
       path: seekhJaunga/pipelineBasic
       buildOn:
          branchCreate: false
