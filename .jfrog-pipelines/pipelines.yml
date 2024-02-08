@@ -68,7 +68,7 @@ pipelines:
       execution:
         onExecute:
           - echo 'step1'
-          - echoInfo 'hehe'
+          # - echoInfo 'hehe'
   
 {{ range $i, $e := until 100}}
     - name: "step{{$i}}"
@@ -84,5 +84,5 @@ pipelines:
       execution:
         onExecute:
           - echo 'step1'
-          - echoInfo 'hehe'
+          # - echoInfo 'hehe'
 {{ end }}
