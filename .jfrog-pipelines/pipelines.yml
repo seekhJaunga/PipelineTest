@@ -70,7 +70,7 @@ pipelines:
           - echo 'step1'
           # - echoInfo 'hehe'
   
-{{ range $i, $e := until 100}}
+{{ range $i, $e := until 10}}
     - name: "step{{$i}}"
       type: Bash
       # configuration:
