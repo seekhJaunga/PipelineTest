@@ -6,7 +6,7 @@ resources:
   - name: gitRes1
     type: GitRepo
     configuration:
-      gitProvider: test
+      gitProvider: gitint
       path: seekhJaunga/pipelineBasic
       buildOn:
          branchCreate: false
