@@ -57,6 +57,19 @@ pipelines:
           allowCustom: false
         env2: value2
   steps: 
+    - name: "step"
+      type: Bash
+      # configuration:
+      #   inputResources:
+      #     - name: resource_2
+      configuration:
+        environmentVariables:
+          chec: hehe
+      execution:
+        onExecute:
+          - echo 'step1'
+          - echoInfo 'hehe'
+  
 {{ range $i, $e := until 100}}
     - name: "step{{$i}}"
       type: Bash
@@ -64,6 +77,8 @@ pipelines:
       #   inputResources:
       #     - name: resource_2
       configuration:
+        inputSteps:
+            - name: step
         environmentVariables:
           chec: hehe
       execution:
