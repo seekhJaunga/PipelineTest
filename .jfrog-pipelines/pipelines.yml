@@ -47,8 +47,7 @@
 
 pipelines:
 
-{{ range $i, $e := until 100}}
-- name: "bar{{$i}}"
+- name: "bar1"
   configuration:
     environmentVariables:
       readOnly:
@@ -58,7 +57,8 @@ pipelines:
           allowCustom: false
         env2: value2
   steps: 
-    - name: step1
+{{ range $i, $e := until 100}}
+    - name: "step{{$i}}"
       type: Bash
       # configuration:
       #   inputResources:
