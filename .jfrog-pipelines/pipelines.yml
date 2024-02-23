@@ -47,7 +47,8 @@
 
 pipelines:
 
-- name: "bar1"
+{{ range $i, $e := until 4}}
+- name: "bar{{i}}"
   configuration:
     environmentVariables:
       readOnly:
@@ -70,8 +71,7 @@ pipelines:
           - echo 'step1'
           # - echoInfo 'hehe'
   
-{{ range $i, $e := until 4}}
-    - name: "step{{$i}}"
+    - name: "step1"
       type: Bash
       # configuration:
       #   inputResources:
@@ -84,5 +84,4 @@ pipelines:
       execution:
         onExecute:
           - echo 'step1'
-          # - echoInfo 'hehe'
 {{ end }}
