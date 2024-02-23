@@ -48,7 +48,7 @@
 pipelines:
 
 {{ range $i, $e := until 4}}
-- name: "bar{{$i}}"
+- name: "bar{{$i+1}}"
   configuration:
     environmentVariables:
       readOnly:
