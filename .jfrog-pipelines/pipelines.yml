@@ -44,7 +44,13 @@
 #             - echo $env2
 #             # - write_output myResource runNumber=${run_number}
 
-
+resources:
+  - name: dbp_build_info1
+    type: BuildInfo
+    configuration:
+      sourceArtifactory: artifactory
+      buildName: dbp_build
+      buildNumber: 1
 pipelines:
 
 {{ range $i, $e := until 5}}
